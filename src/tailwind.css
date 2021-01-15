@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.divide-footer {
+    border-top-color: white;
+    background: white;
+    border-style: solid;
+    height: 3px;
+    width: 15px;
+}
