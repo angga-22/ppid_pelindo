@@ -1,0 +1,24 @@
+.carousel1,
+.carousel1 .slider-wrapper,
+.carousel1 .slide {
+  height: 500px;
+}
+
+.carousel2,
+.carousel2 .slider-wrapper,
+.carousel2 .slide {
+  height: 320px;
+}
+
+.carousel2 .control-dots {
+  text-align: end;
+  padding: 45px 75px;
+}
+
+@media only screen and (max-width: 768px) {
+  .carousel1,
+  .carousel1 .slider-wrapper,
+  .carousel1 .slide {
+    height: 310px;
+  }
+}
