@@ -6,7 +6,7 @@ const index = ({ children }: any) => {
 		<>
 			<Header />
 			<main className='min-h-screen relative'>
-				<div className='pt-32'>{children}</div>
+				<div className='sm:pt-28 pt-20'>{children}</div>
 				<Footer />
 			</main>
 		</>
