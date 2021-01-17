@@ -33,12 +33,17 @@ const Header = () => {
 			children: []
 		},
 		{
+			name: 'Regulasi',
+			route: ROUTES.REGULASI_PAGE,
+			children: []
+		},
+		{
 			name: 'Informasi Publik',
 			route: ROUTES.INFORMASI_PAGE,
 			children: [
 				{
 					name: 'tes',
-					route: '/tes'
+					route: ROUTES.INFORMASI_PAGE
 				},
 				{
 					name: 'tes1',
@@ -73,7 +78,7 @@ const Header = () => {
 					<div className='text-sm sm:flex sm:w-full justify-end'>
 						{menu.map((list) => (
 							<NavLink
-								to={list.route}
+								to={list.children.length > 0 ? '#' : list.route}
 								className='group relative text-blue-100 block sm:inline-block text-right p-4 text-lg transition duration-500 ease-in-out  hover:text-white hover:bg-blue-100 transform'
 							>
 								{list.name}
