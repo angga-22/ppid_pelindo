@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Children, useState } from 'react';
 
 import { NavLink } from 'react-router-dom';
 
@@ -10,19 +10,41 @@ const Header = () => {
 	const menu = [
 		{
 			name: 'Beranda',
-			route: ROUTES.HOME_PAGE
+			route: ROUTES.HOME_PAGE,
+			children: []
 		},
 		{
 			name: 'Statistik',
-			route: ROUTES.STATISTIK_PAGE
+			route: ROUTES.STATISTIK_PAGE,
+			children: [
+				{
+					name: 'a',
+					route: '/tes'
+				},
+				{
+					name: 'b',
+					route: '/tes'
+				}
+			]
 		},
 		{
 			name: 'Profile',
-			route: ROUTES.PROFIL_PAGE
+			route: ROUTES.PROFIL_PAGE,
+			children: []
 		},
 		{
 			name: 'Informasi Publik',
-			route: ROUTES.INFORMASI_PAGE
+			route: ROUTES.INFORMASI_PAGE,
+			children: [
+				{
+					name: 'tes',
+					route: '/tes'
+				},
+				{
+					name: 'tes1',
+					route: '/tes2'
+				}
+			]
 		}
 	];
 	const [open, setOpen] = useState(false);
@@ -50,8 +72,26 @@ const Header = () => {
 				<div className={`w-full  lg:flex lg:items-center lg:w-auto ${open ? 'block sm:none' : 'hidden sm:block '} transition duration-500 ease-in-out transform`}>
 					<div className='text-sm sm:flex sm:w-full justify-end'>
 						{menu.map((list) => (
-							<NavLink to={list.route} className='text-blue-100 block sm:inline-block text-right p-4 text-lg transition duration-500 ease-in-out  hover:text-red-600 transform'>
+							<NavLink
+								to={list.route}
+								className='group relative text-blue-100 block sm:inline-block text-right p-4 text-lg transition duration-500 ease-in-out  hover:text-white hover:bg-blue-100 transform'
+							>
 								{list.name}
+
+								{list.children.length > 0 && (
+									<div className='dropdown-menu absolute hidden text-gray-700 pt-1 group-hover:block w-full left-0 shadow-lg mt-1'>
+										{list.children.map((child) => {
+											return (
+												<NavLink
+													to={child.route}
+													className='text-gray-700 pt-1 group-hover:block hover:bg-blue-300 bg-blue-100 text-white text-right p-4 text-lg transition duration-500 ease-in-out  hover:text-red-600 transform'
+												>
+													{child.name}
+												</NavLink>
+											);
+										})}
+									</div>
+								)}
 							</NavLink>
 						))}
 					</div>
