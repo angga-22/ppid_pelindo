@@ -1,29 +1,56 @@
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { HomepageApi } from "../../../api";
 
-const Header = () => {
-  const menu = [
-    {
-      name: "Beranda",
-      route: "/",
-    },
-    {
-      name: "Statistik",
-      route: "/statistik",
-    },
-    {
-      name: "Profile",
-      route: "/profile",
-    },
-  ];
+const Header = (props: any) => {
+  //   const menu = [
+  //     {
+  //       name: "Beranda",
+  //       route: "/",
+  //     },
+  //     {
+  //       name: "Statistik",
+  //       route: "/statistik",
+  //     },
+  //     {
+  //       name: "Profile",
+  //       route: "/profile",
+  //     },
+  //   ];
   const [open, setOpen] = useState(false);
+  const [beranda, setBeranda] = useState([]);
+  const [profil, setProfil] = useState([]);
 
   const toggleMenu = () => {
     setOpen(!open);
   };
+
+  useEffect(() => {
+    HomepageApi(($: any) => {
+      let beranda: any = [];
+      let profil: any = [];
+
+      $('li[class="dropdown"]:nth-child(1) > a').each(function (
+        i: any,
+        element: any
+      ) {
+        let datas = $(element).prepend().text();
+        beranda.push(datas);
+      });
+      $('li[class="dropdown"]:nth-child(2) > a').each(function (
+        i: any,
+        element: any
+      ) {
+        let datas = $(element).prepend().text();
+        profil.push(datas);
+      });
+      setBeranda(beranda);
+      setProfil(profil);
+    });
+  }, []);
+
   return (
-    <div className="fixed w-full shadow-md">
+    <div className="fixed w-full shadow-md z-40">
       <nav className="flex items-center sm:justify-start justify-between flex-wrap  mx-auto container p-6 ">
         <div className="flex mr-6">
           <NavLink to="/" className="text-lg">
@@ -52,12 +79,21 @@ const Header = () => {
           } transition duration-500 ease-in-out transform`}
         >
           <div className="text-sm sm:flex sm:w-full justify-end">
-            {menu.map((list) => (
+            {beranda.map((item) => (
               <NavLink
-                to={list.route}
+                to="/"
                 className="block sm:inline-block text-right p-4 text-lg transition duration-500 ease-in-out  hover:text-red-600 transform"
               >
-                {list.name}
+                {item}
+              </NavLink>
+            ))}
+
+            {profil.map((item) => (
+              <NavLink
+                to="/profile"
+                className="block sm:inline-block text-right p-4 text-lg transition duration-500 ease-in-out  hover:text-red-600 transform"
+              >
+                {item}
               </NavLink>
             ))}
           </div>
