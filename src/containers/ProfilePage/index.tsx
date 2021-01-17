@@ -1,6 +1,6 @@
 import React from 'react';
 
-import logoPelindo from '../../assets/img/logo-pelindo.png';
+import logoPelindo from 'assets/img/logo-pelindo.png';
 
 const index = () => {
 	return (

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import Icon1 from '../../assets/img/icon1.png';
-import Icon2 from '../../assets/img/icon2.png';
-import Icon3 from '../../assets/img/icon3.png';
-import CEO from '../../assets/img/CEO.png';
-import News from '../../assets/img/news.jpg';
-import BackCarousel from '../../assets/img/back-carousel.jpg';
-import BackCarousel2 from '../../assets/img/back-carousel2.jpg';
+import Icon1 from 'assets/img/icon1.png';
+import Icon2 from 'assets/img/icon2.png';
+import Icon3 from 'assets/img/icon3.png';
+import CEO from 'assets/img/CEO.png';
+import News from 'assets/img/news.jpg';
+import BackCarousel from 'assets/img/back-carousel.jpg';
+import BackCarousel2 from 'assets/img/back-carousel2.jpg';
 import './index.css';
 
 const index = () => {

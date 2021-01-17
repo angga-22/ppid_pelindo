@@ -4,19 +4,25 @@ import { NavLink } from 'react-router-dom';
 
 import logoPelindo from '../../../assets/img/logo-pelindo.png';
 
+import * as ROUTES from 'containers/App/constants';
+
 const Header = () => {
 	const menu = [
 		{
 			name: 'Beranda',
-			route: '/'
+			route: ROUTES.HOME_PAGE
 		},
 		{
 			name: 'Statistik',
-			route: '/statistik'
+			route: ROUTES.STATISTIK_PAGE
 		},
 		{
 			name: 'Profile',
-			route: '/profile'
+			route: ROUTES.PROFIL_PAGE
+		},
+		{
+			name: 'Informasi Publik',
+			route: ROUTES.INFORMASI_PAGE
 		}
 	];
 	const [open, setOpen] = useState(false);
@@ -26,10 +32,10 @@ const Header = () => {
 	};
 	return (
 		<div className='fixed w-full shadow-md z-40 bg-white'>
-			<nav className='flex items-center sm:justify-start justify-between flex-wrap  mx-auto container p-6 '>
-				<div className='flex mr-6'>
+			<nav className='flex items-center justify-between flex-wrap  mx-auto container p-6 '>
+				<div className='flex mr-6 w-1/4'>
 					<NavLink to='/' className='text-lg'>
-						<img src={logoPelindo} alt='pelindo' className='w-1/4' />
+						<img src={logoPelindo} alt='pelindo' className='w-none sm:w-2/4' />
 					</NavLink>
 				</div>
 				<div className='block lg:hidden'>
