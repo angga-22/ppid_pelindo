@@ -17980,6 +17980,12 @@ video {
   width: 15px;
 }
 
+.profile-banner {
+  background-image: url('/src/assets/img/profile.png');
+  background-position: center;
+  background-size: cover;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

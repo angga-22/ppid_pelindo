@@ -98,7 +98,7 @@ const Index = () => {
   }, []);
 
   const Loading = () => {
-    return <div>...loading</div>;
+    return <div className=" container text-center my-10">...loading</div>;
   };
 
   return (
@@ -130,20 +130,9 @@ const Index = () => {
           <div className="mt-10 lg:px-0">
             <div>
               <div className="px-12 mb-12">
-                {data.map((item, i) => {
-                  return (
-                    <h4 key={i} className="text-2xl font-bold">
-                      {item}
-                    </h4>
-                  );
-                })}
-                {data1.map((item1, i) => {
-                  return (
-                    <p key={i} className="mt-4 lg:w-3/4 mx-auto">
-                      {item1}
-                    </p>
-                  );
-                })}
+                <h4 className="text-2xl font-bold">{data}</h4>
+
+                <p className="mt-4 lg:w-3/4 mx-auto">{data1}</p>
               </div>
 
               <div className="flex flex-col lg:flex-row space-y-7 justify-evenly mt-8 pb-12 text-sm font-bold mx-32 lg:space-y-0">

@@ -46,7 +46,7 @@ const index = () => {
       <div className="relative mx-auto z-25">
         <img
           src={bgChart}
-          className="absolute opacity-10 -z-10 top-0 right-0"
+          className="absolute opacity-5 -z-10 top-0 right-0"
           alt=""
         />
         <div className="mx-6 lg:mx-32 h-3/4">
