@@ -38,6 +38,11 @@ const Header = () => {
 			children: []
 		},
 		{
+			name: 'Maklumat',
+			route: ROUTES.MAKLUMAT_PAGE,
+			children: []
+		},
+		{
 			name: 'Informasi Publik',
 			route: ROUTES.INFORMASI_PAGE,
 			children: [
