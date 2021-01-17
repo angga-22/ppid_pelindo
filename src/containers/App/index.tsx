@@ -9,6 +9,7 @@ import LoginPage from 'containers/LoginPage/index';
 import InformasiPublik from 'containers/InformasiPublikPage/index';
 import RegulasiPage from 'containers/RegulasiPage/index';
 import MaklumatPage from 'containers/MaklumatPage/index';
+import ProsedurPage from 'containers/ProsedurPage/index';
 
 import * as ROUTES from './constants';
 
@@ -24,6 +25,7 @@ const index = () => {
 					<Route exact path={ROUTES.INFORMASI_PAGE} component={InformasiPublik} />
 					<Route exact path={ROUTES.REGULASI_PAGE} component={RegulasiPage} />
 					<Route exact path={ROUTES.MAKLUMAT_PAGE} component={MaklumatPage} />
+					<Route exact path={ROUTES.PROSEDUR_PAGE} component={ProsedurPage} />
 				</Switch>
 			</Layout>
 		</BrowserRouter>

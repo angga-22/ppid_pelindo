@@ -43,6 +43,16 @@ const Header = () => {
 			children: []
 		},
 		{
+			name: 'Layanan Publik',
+			route: '#',
+			children: [
+				{
+					name: 'Prosedur Permohonan',
+					route: ROUTES.PROSEDUR_PAGE
+				}
+			]
+		},
+		{
 			name: 'Informasi Publik',
 			route: ROUTES.INFORMASI_PAGE,
 			children: [
