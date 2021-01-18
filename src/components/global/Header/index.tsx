@@ -179,7 +179,7 @@ const Header = (props: any) => {
       });
 
       setMenuData(menudata);
-      console.log(menudata);
+      console.log(menudata, "menu di header");
     });
   }, []);
 
@@ -245,35 +245,7 @@ const Header = (props: any) => {
 
 export default Header;
 
-// 		<div className={`w-full  lg:flex lg:items-center lg:w-auto ${open ? 'block sm:none' : 'hidden sm:block '} transition duration-500 ease-in-out transform`}>
-// 			<div className='text-sm sm:flex sm:w-full justify-end'>
-// 				{menu.map((list) => (
-// 					<NavLink
-// 						to={list.children.length > 0 ? '#' : list.route}
-// 						className='group relative text-blue-100 block sm:inline-block text-right p-4 text-lg transition duration-500 ease-in-out  hover:text-white hover:bg-blue-100 transform'
-// 					>
-// 						{list.name}
-
-// 							<div className='dropdown-menu absolute hidden text-gray-700 pt-1 group-hover:block w-full left-0 shadow-lg mt-1'>
-// 							  {menudata.map((item: any) => (
-// 									return (
-// 										<NavLink
-//                                         to={item.route}
-// 											className='text-gray-700 pt-1 group-hover:block hover:bg-blue-300 bg-blue-100 text-white text-right p-4 text-lg transition duration-500 ease-in-out  hover:text-red-600 transform'
-// 										>
-// 											     {item.title}
-// 										</NavLink>
-// 									);
-// 								})}
-// 							</div>
-
-// 					</NavLink>
-// 				))}
-// 			</div>
-// 		</div>
-// 	</nav>
-// </div>
-// );
+//
 
 //punya angga
 // {/* <div

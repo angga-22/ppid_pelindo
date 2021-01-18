@@ -10,3 +10,7 @@ div[type="div"] ~ span {
   font-size: 14px !important;
   border: 1px solid rgba(4, 79, 156, 0.5) !important;
 }
+
+svg > g[class^="raphael-group-"] > text {
+  display: none;
+}

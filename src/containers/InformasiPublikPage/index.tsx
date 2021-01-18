@@ -7,12 +7,14 @@ const InformasiPublikPage = () => {
   const [capaianKerja, setCapaianKerja] = useState([]);
   const [laporan, setLaporan] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [downloadView, setDownloadView] = useState([]);
 
   useEffect(() => {
     InformasiApi(($: any) => {
       let informasi: any = [];
       let capaianKerja: any = [];
       let laporan: any = [];
+      let downloadView: any = [];
       $("tbody > tr > td:nth-child(3)").each(function (i: any, element: any) {
         let datas = $(element).prepend().text().trim();
 
@@ -38,10 +40,23 @@ const InformasiPublikPage = () => {
         laporan.push(obj);
       });
 
+      $("tbody > tr > td:nth-child(4) > a").each(function (
+        i: any,
+        element: any
+      ) {
+        let linked = $(element).prepend().attr("href");
+
+        const obj = { link: "" };
+        obj["link"] = linked;
+        downloadView.push(obj);
+      });
+
       setInformasi(informasi.slice(0, 7));
       setCapaianKerja(capaianKerja.slice(7, 8));
       setLaporan(laporan.slice(8, 9));
+      setDownloadView(downloadView);
       setLoading(false);
+      console.log(downloadView, "download and view di informasi publik page");
     });
   }, []);
 

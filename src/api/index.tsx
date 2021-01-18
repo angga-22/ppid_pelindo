@@ -11,7 +11,7 @@ export const HomepageApi = async (callback: any) => {
       callback($);
     })
     .catch(function (err) {
-      console.log("failed to get data");
+      console.log("failed to get data homepageapi");
     });
 };
 
@@ -24,7 +24,7 @@ export const ProfilepageApi = async (callback: any) => {
       callback($);
     })
     .catch(function (err) {
-      console.log("failed to get data");
+      console.log("failed to get data profil page");
     });
 };
 
@@ -37,7 +37,7 @@ export const InformasiApi = async (callback: any) => {
       callback($);
     })
     .catch(function (err) {
-      console.log("failed to get data");
+      console.log("failed to get data informasi page");
     });
 };
 
@@ -50,12 +50,9 @@ export const RegulasiApi = async (callback: any) => {
       callback($);
     })
     .catch(function (err) {
-      console.log("failed to get data");
+      console.log("failed to get data regulasi page");
     });
 };
 
-export const StatistikApi = () => {
-  fetch("https://e.plansys.co/ppid/api.php/records/data").then((response) =>
-    response.json()
-  );
-};
+export const ChartApi = async () =>
+  await fetch("https://e.plansys.co/ppid/api.php/records/data");
