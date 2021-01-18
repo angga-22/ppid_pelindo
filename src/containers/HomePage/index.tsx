@@ -24,7 +24,7 @@ const Index = () => {
   const renderCarousel = () => (
     <div className="relative h-full">
       <img
-        className="object-cover"
+        className="object-cover h-full"
         alt="images"
         src={require("../../assets/img/back-carousel.jpg").default}
       />
