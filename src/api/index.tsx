@@ -7,6 +7,7 @@ export const HomepageApi = async (callback: any) => {
   )
     .then(function (html) {
       let $ = cheerio.load(html);
+
       callback($);
     })
     .catch(function (err) {
@@ -40,8 +41,21 @@ export const InformasiApi = async (callback: any) => {
     });
 };
 
-export const ChartApi = async () => {
-  await fetch(
-    "https://e.plansys.co/ppid/api.php/records/data/1"
-  ).then((response) => response.json());
+export const RegulasiApi = async (callback: any) => {
+  await rp(
+    "https://cors-anywhere.herokuapp.com/https://e-ppid.pelindo.co.id/home/regulasi"
+  )
+    .then(function (html) {
+      let $ = cheerio.load(html);
+      callback($);
+    })
+    .catch(function (err) {
+      console.log("failed to get data");
+    });
+};
+
+export const StatistikApi = () => {
+  fetch("https://e.plansys.co/ppid/api.php/records/data").then((response) =>
+    response.json()
+  );
 };

@@ -24,7 +24,7 @@ const Header = (props: any) => {
       children: [
         {
           name: "a",
-          route: "/tes",
+          route: ROUTES.STATISTIK_PAGE,
         },
         {
           name: "b",
