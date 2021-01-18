@@ -7,3 +7,4 @@ export const REGULASI_PAGE = '/regulasi';
 export const MAKLUMAT_PAGE = '/maklumat';
 export const PROSEDUR_PAGE = '/layanan';
 export const FAQ_PAGE = '/faq';
+export const REGISTRASI_PAGE = '/register';
