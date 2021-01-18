@@ -81,7 +81,6 @@ const Index = () => {
                 <p className="text-md sm:text-xl my-8 leading-loose">
                   {paragraf1}
                 </p>
-
                 <p className="text-md sm:text-xl my-8 leading-loose">
                   {paragraf2}
                 </p>
@@ -90,8 +89,17 @@ const Index = () => {
                   {nameCompany}
                 </div>
 
-                <div className="text-md sm:text-xl mt-8 block bg-red-500">
-                  {address}
+                <div className="text-md sm:text-xl mt-8">
+                  Jl. Perak Timur No. 610
+                  <br />
+                  Surabaya 60165 - Indonesia
+                  <br />
+                  Telpon : +62 31 3298631-37
+                  <br />
+                  Fax : +62 31 3295207
+                  <br />
+                  Email : info@pelindo.co.id
+                  <br />
                 </div>
               </div>
             </div>

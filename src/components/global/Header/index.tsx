@@ -3,25 +3,8 @@ import { NavLink } from "react-router-dom";
 import { HomepageApi } from "../../../api";
 
 const Header = (props: any) => {
-  //   const menu = [
-  //     {
-  //       name: "Beranda",
-  //       route: "/",
-  //     },
-  //     {
-  //       name: "Statistik",
-  //       route: "/statistik",
-  //     },
-  //     {
-  //       name: "Profile",
-  //       route: "/profile",
-  //     },
-  //   ];
   const [open, setOpen] = useState(false);
-  const [beranda, setBeranda] = useState([]);
-  const [profil, setProfil] = useState([]);
-  const [regulasi, setRegulasi] = useState([]);
-  const [maklumat, setMaklumat] = useState([]);
+  const [menudata, setMenuData] = useState([]);
 
   const toggleMenu = () => {
     setOpen(!open);
@@ -29,50 +12,118 @@ const Header = (props: any) => {
 
   useEffect(() => {
     HomepageApi(($: any) => {
-      let beranda: any = [];
-      let profil: any = [];
-      let regulasi: any = [];
-      let maklumat: any = [];
+      let menudata: any = [];
 
       $('li[class="dropdown"]:nth-child(1) > a').each(function (
         i: any,
         element: any
       ) {
         let datas = $(element).prepend().text();
-        beranda.push(datas);
+        const obj = { title: "", route: "", children: [] };
+        obj["title"] = datas;
+        obj["route"] = "/";
+        obj["children"] = [];
+        menudata.push(obj);
       });
+
+      const obj = { title: "", route: "", children: [] };
+      obj["title"] = "STATISTIK";
+      obj["route"] = "/statistik";
+      obj["children"] = [];
+      menudata.push(obj);
       $('li[class="dropdown"]:nth-child(2) > a').each(function (
         i: any,
         element: any
       ) {
         let datas = $(element).prepend().text();
-        profil.push(datas);
+        const obj = { title: "", route: "", children: [] };
+        obj["title"] = datas;
+        obj["route"] = "/profile";
+        obj["children"] = [];
+        menudata.push(obj);
       });
       $('li[class="dropdown"]:nth-child(3) > a').each(function (
         i: any,
         element: any
       ) {
         let datas = $(element).prepend().text();
-        regulasi.push(datas);
+
+        const obj = { title: "", route: "", children: [] };
+        obj["title"] = datas;
+        obj["route"] = "/regulasi";
+        obj["children"] = [];
+        menudata.push(obj);
       });
       $('li[class="dropdown"]:nth-child(4) > a').each(function (
         i: any,
         element: any
       ) {
         let datas = $(element).prepend().text();
-        maklumat.push(datas);
+
+        const obj = { title: "", route: "", children: [] };
+        obj["title"] = datas;
+        obj["route"] = "/maklumat";
+        obj["children"] = [];
+        menudata.push(obj);
       });
-      setBeranda(beranda);
-      setProfil(profil);
-      setRegulasi(regulasi);
-      setMaklumat(maklumat);
+      $('ul[class="nav navbar-nav"] > li:nth-child(5) > a').each(function (
+        i: any,
+        element: any
+      ) {
+        let datas = $(element).prepend().text();
+
+        const obj = { title: "", route: "", children: [] };
+        obj["title"] = datas;
+        obj["route"] = "/informasi-publik";
+        obj["children"] = [];
+        menudata.push(obj);
+      });
+      $('ul[class="nav navbar-nav"] > li:nth-child(6) > a').each(function (
+        i: any,
+        element: any
+      ) {
+        let datas = $(element).prepend().text();
+
+        const obj = { title: "", route: "", children: [] };
+        obj["title"] = datas;
+        obj["route"] = "/layanan-publik";
+        obj["children"] = [];
+        menudata.push(obj);
+      });
+      $('ul[class="nav navbar-nav"] > li:nth-child(7) > a').each(function (
+        i: any,
+        element: any
+      ) {
+        let datas = $(element).prepend().text();
+
+        const obj = { title: "", route: "", children: [] };
+        obj["title"] = datas;
+        obj["route"] = "/agenda";
+        obj["children"] = [];
+        menudata.push(obj);
+      });
+      $('ul[class="nav navbar-nav"] > li:nth-child(8) > a').each(function (
+        i: any,
+        element: any
+      ) {
+        let datas = $(element).prepend().text();
+
+        const obj = { title: "", route: "", children: [] };
+        obj["title"] = datas;
+        obj["route"] = "/faq";
+        obj["children"] = [];
+        menudata.push(obj);
+      });
+
+      setMenuData(menudata);
+      console.log(menudata);
     });
   }, []);
 
   return (
-    <div className="fixed w-full shadow-md z-40">
-      <nav className="flex items-center sm:justify-start justify-between flex-wrap  mx-auto container p-6 ">
-        <div className="flex mr-6">
+    <div className="fixed w-full shadow-md z-40 bg-white">
+      <nav className="flex items-center justify-between flex-wrap  mx-auto container p-6 ">
+        <div className="flex mr-6 w-1/4">
           <NavLink to="/" className="text-lg">
             <img
               src={require("../../../assets/img/logo-pelindo.png").default}
@@ -103,33 +154,14 @@ const Header = (props: any) => {
           } transition duration-500 ease-in-out transform`}
         >
           <div className="text-sm sm:flex sm:w-full justify-end">
-            <NavLink
-              to="/"
-              className="block sm:inline-block text-right p-4 text-lg transition duration-500 ease-in-out  hover:text-red-600 transform"
-            >
-              {beranda}
-            </NavLink>
-
-            <NavLink
-              to="/profile"
-              className="block sm:inline-block text-right p-4 text-lg transition duration-500 ease-in-out  hover:text-red-600 transform"
-            >
-              {profil}
-            </NavLink>
-
-            <NavLink
-              to="/regulasi"
-              className="block sm:inline-block text-right p-4 text-lg transition duration-500 ease-in-out  hover:text-red-600 transform"
-            >
-              {regulasi}
-            </NavLink>
-
-            <NavLink
-              to="/maklumat"
-              className="block sm:inline-block text-right p-4 text-lg transition duration-500 ease-in-out  hover:text-red-600 transform"
-            >
-              {maklumat}
-            </NavLink>
+            {menudata.map((item: any) => (
+              <NavLink
+                to={item.route}
+                className="block sm:inline-block text-right p-4 text-lg transition duration-500 ease-in-out  hover:text-red-600 transform"
+              >
+                {item.title}
+              </NavLink>
+            ))}
           </div>
         </div>
       </nav>

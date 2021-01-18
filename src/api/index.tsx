@@ -39,3 +39,9 @@ export const InformasiApi = async (callback: any) => {
       console.log("failed to get data");
     });
 };
+
+export const ChartApi = async () => {
+  await fetch(
+    "https://e.plansys.co/ppid/api.php/records/data/1"
+  ).then((response) => response.json());
+};

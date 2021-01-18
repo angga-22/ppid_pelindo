@@ -1,16 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import logoPelindo from "../../assets/img/logo-pelindo.png";
-import bgChart from "../../assets/img/bgChart.jpg";
+import logoPelindo from "assets/img/logo-pelindo.png";
 
 const index = () => {
   return (
     <div>
       <div className="min-h-screen mx-6 relative">
         <img
-          src={bgChart}
+          src={require("../../assets/img/bgChart.jpg").default}
           className="absolute opacity-5 -z-10 top-0 right-0"
-          alt="bgChart"
+          alt=""
         />
         <form className="flex flex-col space-y-8 items-center mt-16 lg:w-1/3  mx-auto rounded">
           <img src={logoPelindo} alt="pelindo" className="w-1/2" />
