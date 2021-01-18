@@ -87,10 +87,10 @@ const index = () => {
 						</div>
 
 						<div className='my-4 flex'>
-							<div className='px-2 w-1/3'>
+							<div className='px-2'>
 								<button className=' px-4 py-2 transform hover:scale-110 motion-reduce:transform-none bg-gray-200 text-white rounded  overflow-visible'>Cancel</button>
 							</div>
-							<div className='px-2 w-1/3'>
+							<div className='px-2'>
 								<button className=' px-4 py-2 transform hover:scale-110 motion-reduce:transform-none bg-blue-100 text-white rounded  overflow-visible'>Submit</button>
 							</div>
 						</div>
