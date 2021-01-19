@@ -1,5 +1,6 @@
 .fc__tooltip {
   position: static !important;
+  font-size: 32px !important;
 }
 
 div[type="div"] ~ span {

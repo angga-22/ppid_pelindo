@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import bgChart from "assets/img/bgChart.jpg";
-import { ChartApi } from "api";
+import { ChartsApi } from "api";
 
 //Import ReactFC
 import ReactFC from "react-fusioncharts";
@@ -19,55 +19,69 @@ ReactFC.fcRoot(FusionCharts, Column2D, FusionTheme);
 //Creating the JSON object to store the chart configurations
 
 const Index = () => {
-  const [charts, setCharts] = useState<
-    { label: string; value: any; link: any }[]
-  >([
-    {
-      label: "",
-      value: "",
-      link: "",
-    },
-  ]);
+  const [charts, setCharts] = useState<[]>([]);
 
   useEffect(() => {
     loadChart();
   }, []);
 
   const loadChart = () =>
-    ChartApi()
+    ChartsApi()
       .then((response) => response.json())
       .then(({ records }) => setCharts(records));
 
-  const renderToolText = (value: number) =>
+  const renderToolText = (by: string, value: number) =>
     `<div class="p-6 font-bold">
 	<div class="text-lg">Data Pemohon</div>
-	<div class="text-lg">Perbulan</div>
+	<div class="text-lg">Per${by}</div>
 	<div class="text-6xl text-blue-100 mt-2">${value}</div>
 </div>
 `;
+
   let chartYear: any = [];
   let chartMonth: any = [];
 
+  let dataYear: any = [];
+
   charts.map((c: any) => {
-    chartYear.push({
-      label: c.year,
-      value: c.value,
-      link: "newchart-xml-" + c.year,
-      toolText: `${renderToolText(c.value)}`,
+    let parsed = JSON.parse(c.data);
+    let id = { id: c.id };
+    return chartYear.push({ ...id, ...parsed });
+  });
+
+  for (let cy in chartYear) {
+    let year = JSON.stringify(chartYear[cy].year);
+    let id = JSON.stringify(chartYear[cy].id);
+    dataYear.push({
+      label: year,
+      value: chartYear[cy].value,
+      link: "newchart-xml-" + id,
+      toolText: `${renderToolText("tahun", chartYear[cy].value)}`,
     });
 
-    // chartMonth.push({
-    //   id: c.year,
-    //   linkedchart: {
-    //     chart: {
-    //       theme: "fusion",
-    //       rotateValues: "0",
-    //       toolTipBgColor: "#efefef",
-    //     }
-    //   }
-    //   data: []
-    // })
-  });
+    let months = chartYear[cy].months;
+
+    for (let m in months) {
+      let { label } = months[m];
+      let capitalize = label.split("")[0].toUpperCase();
+      let fullLabel = capitalize.concat(label.substring(1));
+      months[m].value = months[m]["score"];
+      delete months[m].score;
+      months[m].toolText = `${renderToolText("bulan", months[m].value)}`;
+      months[m].label = fullLabel;
+      chartMonth.push({
+        id: id,
+        linkedchart: {
+          chart: {
+            theme: "fusion",
+            rotateValues: "0",
+            toolTipBgColor: "#efefef",
+          },
+          data: months,
+        },
+      });
+    }
+  }
 
   const chartConfigs = {
     type: "column2d", // The chart type
@@ -82,123 +96,11 @@ const Index = () => {
         toolTipBgColor: "#efefef",
         toolbalButtonColor: "#000000",
       },
-      data: chartYear,
-      // data: [charts.map((c: any) =>
-      //   {
-      //     label: c.year,
-      //     value: c.value,
-      //     link: "newchart-xml-" + c.year,
-      //   }
-      // )]
-      // data: [
-      //   {
-      //     label: "2017",
-      //     value: "168",
-      //     link: "newchart-xml-2017",
-      //     toolText: `${renderToolText(168)}`,
-      //   },
-      //   {
-      //     label: "2018",
-      //     value: "400",
-      //     link: "newchart-xml-2018",
-      //     toolText: `${renderToolText(400)}`,
-      //   },
-      //   {
-      //     label: "2019",
-      //     value: "600",
-      //     link: "newchart-xml-2019",
-      //     toolText: `${renderToolText(600)}`,
-      //   },
-      // ],
-      linkeddata: [
-        {
-          id: "2017",
-          linkedchart: {
-            chart: {
-              theme: "fusion",
-              rotateValues: "0",
-              toolTipBgColor: "#efefef",
-            },
-            data: [
-              {
-                label: "Januari",
-                value: "45",
-                toolText: `${renderToolText(45)}`,
-              },
-              {
-                label: "Februari",
-                value: "100",
-                toolText: `${renderToolText(100)}`,
-              },
-              {
-                label: "Maret",
-                value: "23",
-                toolText: `${renderToolText(23)}`,
-              },
-            ],
-          },
-        },
-        {
-          id: "2018",
-          linkedchart: {
-            chart: {
-              theme: "fusion",
-              rotateValues: "0",
-              toolTipBgColor: "#efefef",
-            },
-            data: [
-              {
-                label: "Januari",
-                value: "45",
-                toolText: `${renderToolText(45)}`,
-              },
-              {
-                label: "Februari",
-                value: "100",
-                toolText: `${renderToolText(100)}`,
-              },
-              {
-                label: "Maret",
-                value: "23",
-                toolText: `${renderToolText(23)}`,
-              },
-            ],
-          },
-        },
-        {
-          id: "2019",
-          linkedchart: {
-            chart: {
-              theme: "fusion",
-              rotateValues: "0",
-              toolTipBgColor: "#efefef",
-            },
-            data: [
-              {
-                label: "Januari",
-                value: "45",
-                toolText: `${renderToolText(45)}`,
-              },
-              {
-                label: "Februari",
-                value: "100",
-                toolText: `${renderToolText(100)}`,
-              },
-              {
-                label: "Maret",
-                value: "23",
-                toolText: `${renderToolText(23)}`,
-              },
-            ],
-          },
-        },
-      ],
+      data: dataYear,
+      linkeddata: chartMonth,
     },
   };
 
-  console.log(chartConfigs);
-  console.log(charts[0]);
-  // useEffect(())
   return (
     <div className="">
       <div className="flex items-center justify-between bg-blue-100 text-white p-6 lg:p-20">
