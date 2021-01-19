@@ -1,8 +1,10 @@
 import { FaqApi } from 'api';
+import LoadingBar from 'components/LoadingBar';
 import { useState, useEffect } from 'react';
 
 const Index = () => {
 	const [qa, setQa] = useState([]);
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		FaqApi(($: any) => {
@@ -19,12 +21,15 @@ const Index = () => {
 			});
 
 			setQa(qa);
-
-			console.log(qa, 'a;lksdjfalksdf');
+			setLoading(false);
 		});
 	}, []);
 
 	//
+
+	if (loading) {
+		return <LoadingBar />
+	} 
 
 	return (
 		<>

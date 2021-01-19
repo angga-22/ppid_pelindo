@@ -3,6 +3,7 @@ import { Carousel } from "react-responsive-carousel";
 import { NavLink } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { HomepageApi } from "../../api";
+import Loading from "components/LoadingBar";
 import "./index.css";
 
 const Index = () => {
@@ -101,9 +102,7 @@ const Index = () => {
     });
   }, []);
 
-  const Loading = () => {
-    return <div className=" container text-center my-10">...loading</div>;
-  };
+ 
 
   return (
     <div className="mx-auto text-center mb-12">

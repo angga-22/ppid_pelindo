@@ -15,6 +15,7 @@ import RegisterPage from 'containers/RegisterPage/index';
 import InformasiUmumPage from 'containers/InformasiUmumPage';
 import InformasiWajibPage from 'containers/InformasiWajibPage';
 import AgendaPage from 'containers/AgendaPage';
+import NotFoundPage from 'containers/NotFoundPage';
 import * as ROUTES from './constants';
 
 const index = () => {
@@ -35,6 +36,7 @@ const index = () => {
 					<Route exact path={ROUTES.REGISTRASI_PAGE} component={RegisterPage} />
 					<Route exact path={ROUTES.FAQ_PAGE} component={FaqPage} />
 					<Route exact path={ROUTES.AGENDA_PAGE} component={AgendaPage} />
+					<Route component={NotFoundPage} />
 				</Switch>
 			</Layout>
 		</BrowserRouter>

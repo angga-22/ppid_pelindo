@@ -19,6 +19,7 @@ const CardInformasi = (props: infoProps) => {
 				<a
 					href={props.link.link}
 					target='_blank'
+					rel="noreferrer"
 					className='text-sm sm:text-lg sm:w-40 w-36 rounded-lg transition duration-500 ease-in-out  bg-blue-200 hover:bg-blue-300 text-white flex justify-center items-center p-2'
 				>
 					{getPdf(props.link.link) === 'pdf' ? 'Download' : 'View'}
