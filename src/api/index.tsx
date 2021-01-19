@@ -3,7 +3,7 @@ import cheerio from "cheerio";
 
 export const HomepageApi = async (callback: any) => {
   await rp(
-    "https://cors-anywhere.herokuapp.com/https://e-ppid.pelindo.co.id/home"
+    "https://cors-anywhere.herokuapp.com/https://e-ppid.pelindo.co.id/home?bypass=1"
   )
     .then(function (html) {
       let $ = cheerio.load(html);
@@ -17,7 +17,7 @@ export const HomepageApi = async (callback: any) => {
 
 export const ProfilepageApi = async (callback: any) => {
   await rp(
-    "https://cors-anywhere.herokuapp.com/https://e-ppid.pelindo.co.id/home/profile"
+    "https://cors-anywhere.herokuapp.com/https://e-ppid.pelindo.co.id/home/profile?bypass=1"
   )
     .then(function (html) {
       let $ = cheerio.load(html);
@@ -30,7 +30,7 @@ export const ProfilepageApi = async (callback: any) => {
 
 export const InformasiApi = async (callback: any) => {
   await rp(
-    "https://cors-anywhere.herokuapp.com/https://e-ppid.pelindo.co.id/home/informasi"
+    "https://cors-anywhere.herokuapp.com/https://e-ppid.pelindo.co.id/home/informasi?bypass=1"
   )
     .then(function (html) {
       let $ = cheerio.load(html);
@@ -43,7 +43,7 @@ export const InformasiApi = async (callback: any) => {
 
 export const InformasiUmumApi = async (callback: any) => {
   await rp(
-    "https://cors-anywhere.herokuapp.com/https://e-ppid.pelindo.co.id/home/umum"
+    "https://cors-anywhere.herokuapp.com/https://e-ppid.pelindo.co.id/home/umum?bypass=1"
   )
     .then(function (html) {
       let $ = cheerio.load(html);
@@ -56,7 +56,7 @@ export const InformasiUmumApi = async (callback: any) => {
 
 export const InformasiWajibApi = async (callback: any) => {
   await rp(
-    "https://cors-anywhere.herokuapp.com/https://e-ppid.pelindo.co.id/home/wajib"
+    "https://cors-anywhere.herokuapp.com/https://e-ppid.pelindo.co.id/home/wajib?bypass=1"
   )
     .then(function (html) {
       let $ = cheerio.load(html);
@@ -69,7 +69,7 @@ export const InformasiWajibApi = async (callback: any) => {
 
 export const RegulasiApi = async (callback: any) => {
   await rp(
-    "https://cors-anywhere.herokuapp.com/https://e-ppid.pelindo.co.id/home/regulasi"
+    "https://cors-anywhere.herokuapp.com/https://e-ppid.pelindo.co.id/home/regulasi?bypass=1"
   )
     .then(function (html) {
       let $ = cheerio.load(html);
@@ -82,7 +82,7 @@ export const RegulasiApi = async (callback: any) => {
 
 export const FaqApi = async (callback: any) => {
   await rp(
-    "https://cors-anywhere.herokuapp.com/https://e-ppid.pelindo.co.id/home/faq"
+    "https://cors-anywhere.herokuapp.com/https://e-ppid.pelindo.co.id/home/faq?bypass=1"
   )
     .then(function (html) {
       let $ = cheerio.load(html);
