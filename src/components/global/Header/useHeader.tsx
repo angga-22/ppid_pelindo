@@ -22,11 +22,11 @@ export default function Api() {
         menudata.push(obj);
       });
 
-      const obj = { title: "", route: "", children: [] };
-      obj["title"] = "STATISTIK";
-      obj["route"] = ROUTES.STATISTIK_PAGE;
-      obj["children"] = [];
-      menudata.push(obj);
+      // const obj = { title: "", route: "", children: [] };
+      // obj["title"] = "STATISTIK";
+      // obj["route"] = ROUTES.STATISTIK_PAGE;
+      // obj["children"] = [];
+      // menudata.push(obj);
       $('li[class="dropdown"]:nth-child(2) > a').each(function (
         i: any,
         element: any

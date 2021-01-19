@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
+import { NavLink } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { HomepageApi } from "../../api";
 import "./index.css";
@@ -169,9 +170,12 @@ const Index = () => {
                   Jumlah Pemohon Informasi
                 </h5>
                 <h1 className="text-7xl my-4 text-blue-200">12345</h1>
-                <button className="uppercase text-sm text-white bg-blue-200 px-3 py-1 rounded">
+                <NavLink
+                  to="/statistik"
+                  className="uppercase text-sm text-white bg-blue-200 px-3 py-1 rounded"
+                >
                   Selengkapnya
-                </button>
+                </NavLink>
               </div>
 
               <div id="carousel2">
