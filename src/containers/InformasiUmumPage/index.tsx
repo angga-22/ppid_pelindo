@@ -1,53 +1,52 @@
-import { InformasiApi } from "api";
+import { InformasiUmumApi } from "api";
 import CardInformasi from "components/Card/CardInformasi";
 import { useEffect, useState } from "react";
 
-const InformasiPublikPage = () => {
-  const [informasi, setInformasi] = useState([]);
-  const [capaianKerja, setCapaianKerja] = useState([]);
-  const [laporan, setLaporan] = useState([]);
-  const [loading, setLoading] = useState(true);
+const InformasiUmumPage = () => {
+  const [aplikasi, setAplikasi] = useState([]);
+  const [jalur, setJalur] = useState([]);
+  const [kondisi, setKondisi] = useState([]);
   const [download, setDownload] = useState([]);
   const [download1, setDownload1] = useState([]);
   const [download2, setDownload2] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    InformasiApi(($: any) => {
-      let informasi: any = [];
-      let capaianKerja: any = [];
-      let laporan: any = [];
+    InformasiUmumApi(($: any) => {
+      let aplikasi: any = [];
+      let jalur: any = [];
+      let kondisi: any = [];
       let download: any = [];
       let download1: any = [];
       let download2: any = [];
 
-      //informasi
+      //aplikasi
       $("tbody > tr > td:nth-child(3)").each(function (i: any, element: any) {
         let datas = $(element).prepend().text().trim();
 
-        const obj = { title: "", link: "" };
+        const obj = { title: "" };
         obj["title"] = datas;
-        obj["link"] = "/";
-        informasi.push(obj);
+        aplikasi.push(obj);
       });
 
-      //capaian kerja
+      //jalur
       $("tbody > tr > td:nth-child(3)").each(function (i: any, element: any) {
         let datas = $(element).prepend().text().trim();
 
-        const obj = { title: "", link: "" };
+        const obj = { title: "" };
         obj["title"] = datas;
-        obj["link"] = "/";
-        capaianKerja.push(obj);
+
+        jalur.push(obj);
       });
 
-      //laporan
+      //kondisi
       $("tbody > tr > td:nth-child(3)").each(function (i: any, element: any) {
         let datas = $(element).prepend().text().trim();
 
-        const obj = { title: "", link: "" };
+        const obj = { title: "" };
         obj["title"] = datas;
-        obj["link"] = "/";
-        laporan.push(obj);
+
+        kondisi.push(obj);
       });
 
       //link download 0
@@ -86,13 +85,13 @@ const InformasiPublikPage = () => {
         download2.push(obj);
       });
 
-      setInformasi(informasi.slice(0, 7));
-      setCapaianKerja(capaianKerja.slice(7, 8));
-      setLaporan(laporan.slice(8, 9));
+      setAplikasi(aplikasi.slice(0, 3));
+      setJalur(jalur.slice(3, 16));
+      setKondisi(kondisi.slice(16, 17));
 
-      setDownload(download.slice(0, 7));
-      setDownload1(download1.slice(7, 8));
-      setDownload2(download2.slice(8, 9));
+      setDownload(download.slice(0, 3));
+      setDownload1(download1.slice(3, 16));
+      setDownload2(download2.slice(16, 17));
       setLoading(false);
     });
   }, []);
@@ -109,30 +108,30 @@ const InformasiPublikPage = () => {
         <div>
           <div className="flex items-center justify-between bg-blue-100 text-white p-6 lg:p-20">
             <h3 className="text-lg lg:text-3xl w-1/ lg:w-1/3">
-              Informasi Yang Wajib Disediakan dan Diumumkan Secara
+              Informasi Yang Wajib Disediakan dan Diumumkan secara
             </h3>
-            <h1 className="text-xl lg:text-6xl">Berkala</h1>
+            <h1 className="text-xl lg:text-6xl">Serta-Merta</h1>
           </div>
           <div className="container my-8 mx-auto p-2 lg:p-0">
             <h1 className="text-xl lg:text-2xl uppercase font-bold my-8">
-              Informasi Tentang Profil PT. Pelabuhan Indonesia III (Persero)
+              Aplikasi untuk Pengguna Jasa
             </h1>
 
-            {informasi.map((data: any, index: any) => {
+            {aplikasi.map((data: any, index: any) => {
               return <CardInformasi data={data} link={download[index]} />;
             })}
 
             <h1 className="text-xl lg:text-2xl uppercase font-bold my-8">
-              Ringkasan Capaian Kerja
+              Jalur Evakuasi di Lingkungan Kantor Pusat
             </h1>
-            {capaianKerja.map((data: any, index: any) => {
+            {jalur.map((data: any, index: any) => {
               return <CardInformasi data={data} link={download1[index]} />;
             })}
 
             <h1 className="text-xl lg:text-2xl uppercase font-bold my-8">
-              Laporan
+              Kondisi dan Situasi Kedaruratan
             </h1>
-            {laporan.map((data: any, index: any) => {
+            {kondisi.map((data: any, index: any) => {
               return <CardInformasi data={data} link={download2[index]} />;
             })}
           </div>
@@ -142,4 +141,4 @@ const InformasiPublikPage = () => {
   );
 };
 
-export default InformasiPublikPage;
+export default InformasiUmumPage;

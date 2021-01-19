@@ -41,6 +41,32 @@ export const InformasiApi = async (callback: any) => {
     });
 };
 
+export const InformasiUmumApi = async (callback: any) => {
+  await rp(
+    "https://cors-anywhere.herokuapp.com/https://e-ppid.pelindo.co.id/home/umum"
+  )
+    .then(function (html) {
+      let $ = cheerio.load(html);
+      callback($);
+    })
+    .catch(function (err) {
+      console.log("failed to get data informasi page");
+    });
+};
+
+export const InformasiWajibApi = async (callback: any) => {
+  await rp(
+    "https://cors-anywhere.herokuapp.com/https://e-ppid.pelindo.co.id/home/wajib"
+  )
+    .then(function (html) {
+      let $ = cheerio.load(html);
+      callback($);
+    })
+    .catch(function (err) {
+      console.log("failed to get data informasi page");
+    });
+};
+
 export const RegulasiApi = async (callback: any) => {
   await rp(
     "https://cors-anywhere.herokuapp.com/https://e-ppid.pelindo.co.id/home/regulasi"
@@ -51,6 +77,19 @@ export const RegulasiApi = async (callback: any) => {
     })
     .catch(function (err) {
       console.log("failed to get data regulasi page");
+    });
+};
+
+export const FaqApi = async (callback: any) => {
+  await rp(
+    "https://cors-anywhere.herokuapp.com/https://e-ppid.pelindo.co.id/home/faq"
+  )
+    .then(function (html) {
+      let $ = cheerio.load(html);
+      callback($);
+    })
+    .catch(function (err) {
+      console.log("failed to get data faq page");
     });
 };
 

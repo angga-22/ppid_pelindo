@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import CardInformasi from "components/Card/CardInformasi";
 import { RegulasiApi } from "api";
-import { link } from "fs";
 
 const InformasiPublikPage = () => {
   const [peraturan, setPeraturan] = useState([]);
@@ -20,6 +19,7 @@ const InformasiPublikPage = () => {
       let download: any = [];
       let download1: any = [];
       let download2: any = [];
+
       //peraturan
       $("tbody > tr > td:nth-child(2) > a").each(function (
         i: any,
@@ -27,9 +27,9 @@ const InformasiPublikPage = () => {
       ) {
         const datas = $(element).prepend().text().trim();
 
-        const obj = { title: "", link: "" };
+        const obj = { title: "" };
         obj["title"] = datas;
-        obj["link"] = "/";
+
         peraturan.push(obj);
       });
 
@@ -64,21 +64,23 @@ const InformasiPublikPage = () => {
         i: any,
         element: any
       ) {
-        let linked = $(element).prepend().attr("href");
+        let link = $(element).prepend().attr("href");
 
-        const obj = { linked: "" };
-        obj["linked"] = linked;
+        const obj = { link: "" };
+        obj["link"] = link;
+
         download.push(obj);
       });
+
       //link download 1
       $("tbody > tr > td:nth-child(4) > a").each(function (
         i: any,
         element: any
       ) {
-        let linked = $(element).prepend().attr("href");
+        let link = $(element).prepend().attr("href");
 
-        const obj = { linked: "" };
-        obj["linked"] = linked;
+        const obj = { link: "" };
+        obj["link"] = link;
         download1.push(obj);
       });
       //link download 2
@@ -86,10 +88,10 @@ const InformasiPublikPage = () => {
         i: any,
         element: any
       ) {
-        let linked = $(element).prepend().attr("href");
+        let link = $(element).prepend().attr("href");
 
-        const obj = { linked: "" };
-        obj["linked"] = linked;
+        const obj = { link: "" };
+        obj["link"] = link;
         download2.push(obj);
       });
 
@@ -99,10 +101,11 @@ const InformasiPublikPage = () => {
       setDownload(download.slice(0, 6));
       setDownload1(download1.slice(6, 10));
       setDownload2(download2.slice(10, 13));
-      //   const returnedTarget = Object.assign(peraturan, download);
-      //   setLoading(false);
-      //   console.log(returnedTarget);
+
+      setLoading(false);
+
       console.log(peraturan, "peraturan di regulasi page");
+      console.log(download, "download di regulasi page");
     });
   }, []);
 
@@ -112,113 +115,43 @@ const InformasiPublikPage = () => {
 
   return (
     <>
-      {/* {loading ? (
+      {loading ? (
         <Loading />
-      ) : ( */}
-      <div>
-        <div className="flex items-center justify-between bg-blue-100 text-white p-6 lg:p-20">
-          <h3 className="text-lg lg:text-3xl w-1/ lg:w-1/3">
-            Informasi Yang Wajib Disediakan dan Diumumkan Secara
-          </h3>
-          <h1 className="text-xl lg:text-6xl">Berkala</h1>
-        </div>
-        <div className="container my-8 mx-auto p-2 lg:p-0">
-          <h1 className="text-xl lg:text-2xl uppercase font-bold my-8">
-            Peraturan Mengenai Keterbukaan Informasi Publik
-          </h1>
-          {peraturan.map((data) => (
-            <CardInformasi {...data} />
-          ))}
+      ) : (
+        <div>
+          <div className="flex items-center justify-between bg-blue-100 text-white p-6 lg:p-20">
+            <h3 className="text-lg lg:text-3xl w-1/ lg:w-1/3">
+              Informasi Yang Wajib Disediakan dan Diumumkan Secara
+            </h3>
+            <h1 className="text-xl lg:text-6xl">Berkala</h1>
+          </div>
+          <div className="container my-8 mx-auto p-2 lg:p-0">
+            <h1 className="text-xl lg:text-2xl uppercase font-bold my-8">
+              Peraturan Mengenai Keterbukaan Informasi Publik
+            </h1>
+            {peraturan.map((data: any, index: any) => {
+              return <CardInformasi data={data} link={download[index]} />;
+            })}
 
-          <h1 className="text-xl lg:text-2xl uppercase font-bold my-8">
-            Peraturan Mengenai Operasional Pelabuhan
-          </h1>
-          {peraturanPelabuhan.map((data) => (
-            <CardInformasi {...data} />
-          ))}
+            <h1 className="text-xl lg:text-2xl uppercase font-bold my-8">
+              Peraturan Mengenai Operasional Pelabuhan
+            </h1>
+            {peraturanPelabuhan.map((data: any, index: any) => {
+              return <CardInformasi data={data} link={download1[index]} />;
+            })}
 
-          <h1 className="text-xl lg:text-2xl uppercase font-bold my-8">
-            Peraturan mengenai Keterbukaan Informasi Publik yang dikeluarkan PT
-            Pelabuhan Indonesia III (Persero)
-          </h1>
-          {peraturanInformasi.map((data) => (
-            <CardInformasi {...data} />
-          ))}
+            <h1 className="text-xl lg:text-2xl uppercase font-bold my-8">
+              Peraturan mengenai Keterbukaan Informasi Publik yang dikeluarkan
+              PT Pelabuhan Indonesia III (Persero)
+            </h1>
+            {peraturanInformasi.map((data: any, index: any) => {
+              return <CardInformasi data={data} link={download2[index]} />;
+            })}
+          </div>
         </div>
-      </div>
-      {/* )} */}
+      )}
     </>
   );
 };
 
 export default InformasiPublikPage;
-
-// const peraturan = [
-// 	{
-// 		title: 'Undang-undang Nomor 14 Tahun 2008 tentang Keterbukaan Informasi Publik',
-// 		opt: 'Download',
-// 		url: 'https://e-ppid.pelindo.co.id/download/downloadregulasi/regulasi_UU_Nomor_14_Tahun_2008.pdf'
-// 	},
-// 	{
-// 		title: 'Peraturan Pemerintah Nomor 61 Tahun 2010 tentang Pelaksanaan Keterbukaan Informasi Publik',
-// 		opt: 'Download',
-// 		url: 'https://e-ppid.pelindo.co.id/download/downloadregulasi/regulasi_UU_Nomor_14_Tahun_2008.pdf'
-// 	},
-// 	{
-// 		title: 'Peraturan Komisi Informasi Nomor 1 Tahun 2010 tentang Standar Layanan Informasi Publik',
-// 		opt: 'Download',
-// 		url: 'https://e-ppid.pelindo.co.id/download/downloadregulasi/regulasi_UU_Nomor_14_Tahun_2008.pdf'
-// 	},
-// 	{
-// 		title: 'Undang-undang Nomor 40 Tahun 1999 tentang Pers',
-// 		opt: 'Download',
-// 		url: 'https://e-ppid.pelindo.co.id/download/downloadregulasi/regulasi_UU_Nomor_14_Tahun_2008.pdf'
-// 	},
-// 	{
-// 		title: 'Kode Etik Jurnalistik',
-// 		opt: 'Download',
-// 		url: 'https://e-ppid.pelindo.co.id/download/downloadregulasi/regulasi_UU_Nomor_14_Tahun_2008.pdf'
-// 	},
-// 	{
-// 		title: 'Peraturan Komisi Informasi Nomor 1 Tahun 2017 tentang Pengklasifikasian Informasi Publik',
-// 		opt: 'Download',
-// 		url: 'https://e-ppid.pelindo.co.id/download/downloadregulasi/regulasi_UU_Nomor_14_Tahun_2008.pdf'
-// 	}
-// ];
-
-// const peraturanPelabuhan = [
-// 	{
-// 		title: 'Undang-undang Nomor 17 Tahun 2008 tentang Pelayaran',
-// 		opt: 'Download',
-// 		url: 'https://e-ppid.pelindo.co.id/download/downloadregulasi/regulasi_UU_Nomor_14_Tahun_2008.pdf'
-// 	},
-// 	{
-// 		title: 'Peraturan Pemerintah Nomor 61 Tahun 2009 tentang Kepelabuhanan',
-// 		opt: 'Download',
-// 		url: 'https://e-ppid.pelindo.co.id/download/downloadregulasi/regulasi_UU_Nomor_14_Tahun_2008.pdf'
-// 	},
-// 	{
-// 		title: 'Keputusan Gubernur Jawa Timur Nomor 188/475//KPTS/013/2017 Tentang Penetapan Lokasi Pembangunan Flyover Dari Dan Menuju Terminal Teluk Lamong',
-// 		opt: 'Download',
-// 		url: 'https://e-ppid.pelindo.co.id/download/downloadregulasi/regulasi_UU_Nomor_14_Tahun_2008.pdf'
-// 	}
-// ];
-
-// const peraturanInformasi = [
-// 	{
-// 		title:
-// 			'Peraturan Direksi PT Pelabuhan Indonesia III (Persero) nomor: Per.13/HM.03/P.III-2016 tanggal 3 Mei 2016 tentang Pedoman Pelaksanaan Keterbukaan Informasi Publik di Lingkungan PT Pelabuhan Indonesia III (Persero)',
-// 		opt: 'Download',
-// 		url: 'https://e-ppid.pelindo.co.id/download/downloadregulasi/regulasi_UU_Nomor_14_Tahun_2008.pdf'
-// 	},
-// 	{
-// 		title: 'Peraturan Direksi PT Pelabuhan Indonesia III (Persero) nomor: Per.0040/HM.03/P.III-2018',
-// 		opt: 'Download',
-// 		url: 'https://e-ppid.pelindo.co.id/download/downloadregulasi/regulasi_UU_Nomor_14_Tahun_2008.pdf'
-// 	},
-// 	{
-// 		title: 'Rancangan Peraturan tentang Keterbukaan Informasi Publik',
-// 		opt: 'Download',
-// 		url: 'https://e-ppid.pelindo.co.id/download/downloadregulasi/regulasi_UU_Nomor_14_Tahun_2008.pdf'
-// 	}
-// ];
