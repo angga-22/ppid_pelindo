@@ -5,14 +5,12 @@ const Index = () => {
   const [paragraf1, setParagraf1] = useState([]);
   const [paragraf2, setParagraf2] = useState([]);
   const [nameCompany, setNameCompany] = useState([]);
-  const [address, setAddress] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     ProfilepageApi(($: any) => {
       let paragraf1: any = [];
       let paragraf2: any = [];
-      let address: any = [];
       let nameCompany: any = [];
       $('div[class="col-md-10"] > p:nth-child(2)').each(function (
         i: any,
@@ -37,17 +35,10 @@ const Index = () => {
         let datas = $(element).prepend().text();
         nameCompany.push(datas);
       });
-      $('div[class="col-md-10"] > p:nth-child(5)').each(function (
-        i: any,
-        element: any
-      ) {
-        let datas = $(element).prepend().text().replace(/\n/g, "<br>");
-        address.push(datas);
-      });
+
       setParagraf1(paragraf1);
       setParagraf2(paragraf2);
       setNameCompany(nameCompany);
-      setAddress(address);
       setLoading(false);
     });
   }, []);
