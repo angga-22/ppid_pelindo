@@ -1,23 +1,28 @@
 import { useState, useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
+import { NavLink } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { HomepageApi } from "../../api";
+import Loading from "components/LoadingBar";
 import "./index.css";
 
 const Index = () => {
-  const renderNews = () => (
-    <div className="h-auto shadow-md p-3 rounded">
-      <div className="bg-gray-900 h-72">
+  const renderNews = (img: any, title: string) => (
+    <div className="shadow-md rounded p-3 h-auto w-full">
+      <div className="bg-gray-900 h-72 w-full">
         <img
-          className="h-full"
-          src={require("../../assets/img/news.jpg").default}
+          className="h-full w-full object-cover"
+          src={require(`../../assets/img/news${img}.jpg`).default}
           alt=""
         />
       </div>
-      <h6 className="text-xl text-gray-900 mt-2">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      </h6>
-      <p className="text-base text-blue-100 mt-6">Selengkapnya</p>
+      <div className="mx-3">
+        <h6 className="text-lg text-gray-900 mt-2">
+          {title.substring(0, 40)}
+          {title.length > 40 && "..."}
+        </h6>
+        <p className="text-base text-blue-100 mt-6">Selengkapnya</p>
+      </div>
     </div>
   );
 
@@ -97,9 +102,7 @@ const Index = () => {
     });
   }, []);
 
-  const Loading = () => {
-    return <div className=" container text-center my-10">...loading</div>;
-  };
+ 
 
   return (
     <div className="mx-auto text-center mb-12">
@@ -131,7 +134,6 @@ const Index = () => {
             <div>
               <div className="px-12 mb-12">
                 <h4 className="text-2xl font-bold">{data}</h4>
-
                 <p className="mt-4 lg:w-3/4 mx-auto">{data1}</p>
               </div>
 
@@ -167,9 +169,12 @@ const Index = () => {
                   Jumlah Pemohon Informasi
                 </h5>
                 <h1 className="text-7xl my-4 text-blue-200">12345</h1>
-                <button className="uppercase text-sm text-white bg-blue-200 px-3 py-1 rounded">
+                <NavLink
+                  to="/statistik"
+                  className="uppercase text-sm text-white bg-blue-200 px-3 py-1 rounded"
+                >
                   Selengkapnya
-                </button>
+                </NavLink>
               </div>
 
               <div id="carousel2">
@@ -196,10 +201,27 @@ const Index = () => {
                 <h2 className="text-blue-200 text-5xl font-bold my-12">
                   Berita Terbaru
                 </h2>
-                <div className="flex flex-col items-center mx-auto  justify-center text-left text-sm space-y-5 lg:space-x-12 md:space-y-0 px-4 lg:flex-row lg:justify-evenly">
-                  {renderNews()}
-                  {renderNews()}
-                  {renderNews()}
+                {/* <div className="grid grid-cols-3 mx-auto  text-left text-sm gap-4 px-4">
+                  {renderNews("1", "Lorem ipsum dolor sit amet.")}
+                  {renderNews(
+                    "2",
+                    "vehicle beside concrete building during daytime"
+                  )}
+                  {renderNews(
+                    "3",
+                    "red and white flag under blue sky during daytime"
+                  )}
+                </div> */}
+                <div className="flex flex-col items-center lg:items-start mx-auto  justify-center text-left text-sm space-y-5 lg:space-x-12 md:space-y-0 px-4 lg:flex-row lg:justify-evenly">
+                  {renderNews("1", "Lorem ipsum dolor sit amet")}
+                  {renderNews(
+                    "2",
+                    "vehicle beside concrete building during daytime"
+                  )}
+                  {renderNews(
+                    "3",
+                    "red and white flag under blue sky during daytime"
+                  )}
                 </div>
               </div>
             </div>

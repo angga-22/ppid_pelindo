@@ -46,7 +46,7 @@ const Header = (props: any) => {
             {menuData.map((list: any) => (
               <NavLink
                 to={list.children.length > 0 ? "#" : list.route}
-                className="group relative text-blue-100 block sm:inline-block text-right p-4 text-md transition duration-500 ease-in-out  hover:text-white hover:bg-blue-100 transform"
+                className="group relative text-blue-100 block sm:inline-block text-right p-4 text-md transition duration-500 ease-in-out  hover:text-blue-300  transform"
               >
                 {list.title}
 
