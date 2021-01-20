@@ -64,7 +64,7 @@ const index = () => {
 				<div className='flex flex-wrap'>
 					{listsFooter.map((list) => {
 						return (
-							<div className='w-full sm:w-1/4 px-2 my-4'>
+							<div className='w-full sm:w-1/4 px-2 my-4' key={list.title}>
 								<div className='font-bold'>{list.title}</div>
 
 								{list.template()}
@@ -73,21 +73,21 @@ const index = () => {
 					})}
 					<div className='w-full sm:w-1/4 px-2 my-4'>
 						<div className='flex'>
-							<a href='http://twitter.com/pelindo3' target='_blank' rel="noreferrer" className='rounded-full h-8 w-8 bg-white flex items-center px-2 mx-2'>
+							<a href='http://twitter.com/pelindo3' target='_blank' rel='noreferrer' className='rounded-full h-8 w-8 bg-white flex items-center px-2 mx-2'>
 								<Twitter className='w-full' fill='#004d9c' />
 							</a>
-							<a href='https://www.facebook.com/pelindo3.official' target='_blank' rel="noreferrer" className='rounded-full h-8 w-8 bg-white flex items-center px-2 mx-2'>
+							<a href='https://www.facebook.com/pelindo3.official' target='_blank' rel='noreferrer' className='rounded-full h-8 w-8 bg-white flex items-center px-2 mx-2'>
 								<FbSVG className='w-full' fill='#004d9c' />
 							</a>
-							<a href='http://instagram.com/pelindo3' target='_blank' rel="noreferrer" className='rounded-full h-8 w-8 bg-white flex items-center px-2 mx-2'>
+							<a href='http://instagram.com/pelindo3' target='_blank' rel='noreferrer' className='rounded-full h-8 w-8 bg-white flex items-center px-2 mx-2'>
 								<Instagram className='w-full' fill='#004d9c' />
 							</a>
-							<a href='http://youtube.com/user/pelindo3humas' target='_blank' rel="noreferrer" className='rounded-full h-8 w-8 bg-white flex items-center px-2 mx-2'>
+							<a href='http://youtube.com/user/pelindo3humas' target='_blank' rel='noreferrer' className='rounded-full h-8 w-8 bg-white flex items-center px-2 mx-2'>
 								<Youtube className='w-full' fill='#004d9c' />
 							</a>
 						</div>
 						<div className='mt-8'>
-							<a href='https://pelindo.co.id/id' target='_blank' rel="noreferrer" className='text-xs font-extralight'>
+							<a href='https://pelindo.co.id/id' target='_blank' rel='noreferrer' className='text-xs font-extralight'>
 								Website Resmi Pelindo
 							</a>
 							{/* <div className='text-xs font-extralight'>Kontak</div>
