@@ -59,7 +59,7 @@ const index = () => {
 		}
 	];
 	return (
-		<footer className='bg-blue-100 w-full text-white absolute bottom-0'>
+		<footer className='bg-blue-100 w-full text-white '>
 			<div className='container mx-auto p-6'>
 				<div className='flex flex-wrap'>
 					{listsFooter.map((list) => {
