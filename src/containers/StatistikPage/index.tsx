@@ -31,8 +31,8 @@ const Index = () => {
       .then(({ records }) => setCharts(records));
 
   const renderToolText = (by: string, value: number) =>
-    `<div class="p-6 font-bold">
-	<div class="text-lg">Data Pemohon</div>
+    `<div class="p-6 font-medium">
+	<div class="text-lg">Rata-Rata Pemohon</div>
 	<div class="text-lg">Per${by}</div>
 	<div class="text-6xl text-blue-100 mt-2">${value}</div>
 </div>
@@ -74,6 +74,7 @@ const Index = () => {
         linkedchart: {
           chart: {
             theme: "fusion",
+            paletteColors: "9CE4F3",
             rotateValues: "0",
             toolTipBgColor: "#efefef",
           },
@@ -92,6 +93,7 @@ const Index = () => {
       // Chart Configuration
       chart: {
         theme: "fusion",
+        paletteColors: "9CE4F3",
         rotateValues: "0",
         toolTipBgColor: "#efefef",
         toolbalButtonColor: "#000000",
