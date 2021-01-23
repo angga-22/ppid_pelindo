@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import CardInformasi from 'components/Card/CardInformasi';
 import Loading from 'components/LoadingBar';
+import Banner from 'components/Banner';
 import { RegulasiApi } from 'api';
 
 const InformasiPublikPage = () => {
@@ -98,11 +99,8 @@ const InformasiPublikPage = () => {
 				<Loading />
 			) : (
 				<div>
-					<div className='flex items-center justify-between bg-blue-100 text-white p-6 lg:p-20'>
-						<h3 className='text-lg lg:text-3xl w-1/ lg:w-1/3'>Informasi Yang Wajib Disediakan dan Diumumkan Secara</h3>
-						<h1 className='text-xl lg:text-6xl'>Berkala</h1>
-					</div>
-					<div className='container my-8 mx-auto p-2 lg:p-0'>
+					<Banner title='Regulasi' />
+					<div className='content-wrapper layout-background'>
 						<h1 className='text-xl lg:text-2xl uppercase font-bold my-8'>Peraturan Mengenai Keterbukaan Informasi Publik</h1>
 						{peraturan.map((data: any, index: any) => {
 							return <CardInformasi data={data} link={download[index]} />;

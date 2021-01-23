@@ -13673,6 +13673,14 @@ video {
   --tw-numeric-fraction: stacked-fractions;
 }
 
+.tracking-2 {
+  letter-spacing: 0.2px;
+}
+
+.tracking-5 {
+  letter-spacing: 0.5px;
+}
+
 .tracking-tighter {
   letter-spacing: -0.05em;
 }
@@ -18132,6 +18140,58 @@ video {
   .fc-toolbar.fc-header-toolbar {
     display: flex;
     flex-direction: column-reverse;
+  }
+}
+
+.content-wrapper layout-background {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .content-wrapper layout-background {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .content-wrapper layout-background {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content-wrapper layout-background {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .content-wrapper layout-background {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .content-wrapper layout-background {
+    max-width: 1536px;
+  }
+}
+
+.content-wrapper layout-background {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .content-wrapper layout-background {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
@@ -31249,6 +31309,14 @@ video {
 
   .sm\:stacked-fractions {
     --tw-numeric-fraction: stacked-fractions;
+  }
+
+  .sm\:tracking-2 {
+    letter-spacing: 0.2px;
+  }
+
+  .sm\:tracking-5 {
+    letter-spacing: 0.5px;
   }
 
   .sm\:tracking-tighter {
@@ -48772,6 +48840,14 @@ video {
     --tw-numeric-fraction: stacked-fractions;
   }
 
+  .md\:tracking-2 {
+    letter-spacing: 0.2px;
+  }
+
+  .md\:tracking-5 {
+    letter-spacing: 0.5px;
+  }
+
   .md\:tracking-tighter {
     letter-spacing: -0.05em;
   }
@@ -66291,6 +66367,14 @@ video {
 
   .lg\:stacked-fractions {
     --tw-numeric-fraction: stacked-fractions;
+  }
+
+  .lg\:tracking-2 {
+    letter-spacing: 0.2px;
+  }
+
+  .lg\:tracking-5 {
+    letter-spacing: 0.5px;
   }
 
   .lg\:tracking-tighter {
@@ -83814,6 +83898,14 @@ video {
     --tw-numeric-fraction: stacked-fractions;
   }
 
+  .xl\:tracking-2 {
+    letter-spacing: 0.2px;
+  }
+
+  .xl\:tracking-5 {
+    letter-spacing: 0.5px;
+  }
+
   .xl\:tracking-tighter {
     letter-spacing: -0.05em;
   }
@@ -101333,6 +101425,14 @@ video {
 
   .\32xl\:stacked-fractions {
     --tw-numeric-fraction: stacked-fractions;
+  }
+
+  .\32xl\:tracking-2 {
+    letter-spacing: 0.2px;
+  }
+
+  .\32xl\:tracking-5 {
+    letter-spacing: 0.5px;
   }
 
   .\32xl\:tracking-tighter {

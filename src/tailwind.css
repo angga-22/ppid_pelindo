@@ -28,3 +28,7 @@
 		flex-direction: column-reverse;
 	}
 }
+
+.content-wrapper layout-background {
+	@apply container mx-auto px-4 sm:px-8 py-0 sm:py-2;
+}
