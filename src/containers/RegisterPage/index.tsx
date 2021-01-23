@@ -51,47 +51,47 @@ const index = () => {
 
 			<div className='container my-8 mx-auto'>
 				<div className='px-2 sm:px-0'>
-					<form className='w-full sm:w-1/2 mx-auto'>
+					<form className='w-full sm:w-1/2 mx-auto' action="https://e-ppid.pelindo.co.id/home/reg" method="POST" name="submit_form">
 						<div className='my-2'>
-							<Select label='Jenis Pemohon' options={pemohon} />
+							<Select label='Jenis Pemohon' options={pemohon} name="jnspemohon" id="jnspemohon" />
 						</div>
 						<div className='my-2'>
-							<Select label='Jenis Identitas' options={identitas} />
+							<Select label='Jenis Identitas' options={identitas}  name="jnsidentitas" id="jnsidentitas" />
 						</div>
 						<div className='my-2'>
-							<Input label='Nomor Identitas' placeholder='tes' />
+							<Input label='Nomor Identitas' placeholder='Nomor identitas' name="jnsidentitas" id="jnsidentitas"/>
 						</div>
 						<div className='my-2'>
-							<Input label='Nama Lengkap' />
+							<Input label='Nama Lengkap' name="nama" id="nama"/>
 						</div>
 						<div className='my-2'>
-							<Input label='NPWP' />
+							<Input label='NPWP' name="npwp" id="npwp" />
 						</div>
 						<div className='my-2'>
-							<Input label='Email' type='Email' />
+							<Input label='Email' type='Email'  name="email" id="email" />
 						</div>
 						<div className='my-2'>
-							<Input label='Pekerjaan' type='text' />
+							<Input label='Pekerjaan' type='text'   name="pekerjaan" id="pekerjaan"/>
 						</div>
 						<div className='my-2'>
-							<Textarea label='Alamat' rows={5} />
+							<Textarea label='Alamat' rows={5}   name="alamat" id="alamat"/>
 						</div>
 						<div className='my-2'>
-							<Input label='No. Telp' type='text' />
+							<Input label='No. Telp' type='text'  name="notelp" id="notelp"/>
 						</div>
 						<div className='my-2'>
-							<Input label='No. Faq' type='text' />
+							<Input label='No. Fax' type='text'  name="nofax" id="nofax"/>
 						</div>
 						<div className='my-2'>
-							<Input label='password' type='password' />
+							<Input label='password' type='password'   name="passw" id="passw"/>
 						</div>
 
 						<div className='my-4 flex'>
 							<div className='px-2'>
-								<button className=' px-4 py-2 transform hover:scale-110 motion-reduce:transform-none bg-gray-200 text-white rounded  overflow-visible'>Cancel</button>
+								<button type="submit" className=' px-4 py-2 transform hover:scale-110 motion-reduce:transform-none bg-gray-200 text-white rounded  overflow-visible'>Cancel</button>
 							</div>
 							<div className='px-2'>
-								<button className=' px-4 py-2 transform hover:scale-110 motion-reduce:transform-none bg-blue-100 text-white rounded  overflow-visible'>Submit</button>
+								<button type="submit" className=' px-4 py-2 transform hover:scale-110 motion-reduce:transform-none bg-blue-100 text-white rounded  overflow-visible'>Submit</button>
 							</div>
 						</div>
 					</form>
