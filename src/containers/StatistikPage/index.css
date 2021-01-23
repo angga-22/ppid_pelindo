@@ -5,12 +5,17 @@
 
 div[type="div"] ~ span {
   padding: 15px !important;
-  background: rgba(4, 79, 156, 0.3) !important;
-  color: rgba(4, 79, 156, 0.8) !important;
+  background: #9ce5f35d !important;
+  color: #3bb5ce !important;
   border-radius: 100% 0 0 100%;
   font-size: 14px !important;
-  border: 1px solid rgba(4, 79, 156, 0.5) !important;
+  border: 1px solid #63d0e6 !important;
   top: -50px !important;
+  transition: all 0.4s;
+}
+
+div[type="div"] ~ span:hover {
+  transform: scale(1.2);
 }
 
 svg > g[class^="raphael-group-"] > text {
