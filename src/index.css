@@ -4622,6 +4622,11 @@ video {
   line-height: 2.5rem;
 }
 
+.text-4\.5xl {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
@@ -22405,6 +22410,11 @@ video {
     line-height: 2.5rem;
   }
 
+  .sm\:text-4\.5xl {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
   .sm\:text-5xl {
     font-size: 3rem;
     line-height: 1;
@@ -40122,6 +40132,11 @@ video {
   .md\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  .md\:text-4\.5xl {
+    font-size: 2.5rem;
+    line-height: 1;
   }
 
   .md\:text-5xl {
@@ -57843,6 +57858,11 @@ video {
     line-height: 2.5rem;
   }
 
+  .lg\:text-4\.5xl {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
   .lg\:text-5xl {
     font-size: 3rem;
     line-height: 1;
@@ -75562,6 +75582,11 @@ video {
     line-height: 2.5rem;
   }
 
+  .xl\:text-4\.5xl {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
   .xl\:text-5xl {
     font-size: 3rem;
     line-height: 1;
@@ -93279,6 +93304,11 @@ video {
   .\32xl\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  .\32xl\:text-4\.5xl {
+    font-size: 2.5rem;
+    line-height: 1;
   }
 
   .\32xl\:text-5xl {
