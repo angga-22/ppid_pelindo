@@ -51,7 +51,7 @@ const InformasiUmumPage = () => {
 						<h3 className='text-lg lg:text-3xl w-1/ lg:w-1/3'>Informasi Yang Wajib Sedia</h3>
 						<h1 className='text-xl lg:text-6xl'>Setiap Saat</h1>
 					</div>
-					<div className='content-wrapper layout-background'>
+					<div className='content-wrapper layout-background mb-8'>
 						<h1 className='text-xl lg:text-2xl uppercase font-bold my-8'>Daftar Informasi Publik</h1>
 
 						{daftar.map((data: any, index: any) => {
