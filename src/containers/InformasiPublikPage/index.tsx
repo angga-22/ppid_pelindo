@@ -1,5 +1,6 @@
 import { InformasiApi } from 'api';
 import CardInformasi from 'components/Card/CardInformasi';
+import Loading from 'components/LoadingBar';
 import { useEffect, useState } from 'react';
 
 const InformasiPublikPage = () => {
@@ -87,10 +88,6 @@ const InformasiPublikPage = () => {
 			setLoading(false);
 		});
 	}, []);
-
-	const Loading = () => {
-		return <div className=' container text-center my-10'>...loading</div>;
-	};
 
 	return (
 		<>
