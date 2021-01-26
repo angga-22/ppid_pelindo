@@ -11,7 +11,12 @@ const index = () => {
           className="absolute opacity-5 -z-10 top-0 right-0"
           alt=""
         />
-        <form className="flex flex-col space-y-8 items-center mt-16 lg:w-1/3  mx-auto rounded" action="https://e-ppid.pelindo.co.id/home/login" name="login_form" method="POST">
+        <form
+          className="flex flex-col space-y-8 items-center mt-16 lg:w-1/3  mx-auto rounded"
+          action="https://e-ppid.pelindo.co.id/home/login"
+          name="login_form"
+          method="POST"
+        >
           <img src={logoPelindo} alt="pelindo" className="w-1/2" />
           <h5 className="text-lg font-bold text-blue-100">Selamat Datang!</h5>
           <div className="flex flex-col w-full">
@@ -45,7 +50,10 @@ const index = () => {
             />
           </div>
           <div className="flex flex-col space-y-4">
-            <button className="w-full bg-blue-100 bg-opacity-30 focus:outline-none text-blue-100 text-opacity-80 py-1 rounded" type="submit">
+            <button
+              className="w-full bg-blue-100 bg-opacity-40 focus:outline-none text-blue-100 text-opacity-80 py-1 rounded"
+              type="submit"
+            >
               Masuk
             </button>
             <div className="w-full h-px bg-gray-900 bg-opacity-20"></div>
