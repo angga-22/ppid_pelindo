@@ -95,3 +95,6 @@ export const FaqApi = async (callback: any) => {
 
 export const ChartsApi = async () =>
   await fetch("https://e.plansys.co/ppid/api.php/records/data");
+
+export const NewsApi = async () =>
+  await fetch("https://e.plansys.co/ppid/api.php/records/news");
