@@ -1,6 +1,7 @@
 import { InformasiWajibApi } from 'api';
 import CardInformasi from 'components/Card/CardInformasi';
 import { useEffect, useState } from 'react';
+import Loading from 'components/LoadingBar';
 
 const InformasiUmumPage = () => {
 	const [daftar, setDaftar] = useState([]);
@@ -36,10 +37,6 @@ const InformasiUmumPage = () => {
 			setLoading(false);
 		});
 	}, []);
-
-	const Loading = () => {
-		return <div className=' container text-center my-10'>...loading</div>;
-	};
 
 	return (
 		<>

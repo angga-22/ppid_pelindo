@@ -188,7 +188,9 @@ module.exports = {
 			'7xl': ['4.5rem', { lineHeight: '1' }],
 			'8xl': ['6rem', { lineHeight: '1' }],
 			'9xl': ['8rem', { lineHeight: '1' }],
-			'1em': ['1em', { lineHeight: '2em' }]
+			'1em': ['1em', { lineHeight: '2em' }],
+			header: ['0.7em', { lineHeight: '0.5px' }],
+			'sub-header': ['0.5em', { lineHeight: '0.5px' }]
 		},
 		fontWeight: {
 			thin: '100',

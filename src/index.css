@@ -4653,6 +4653,16 @@ video {
   line-height: 2em;
 }
 
+.text-header {
+  font-size: 0.7em;
+  line-height: 0.5px;
+}
+
+.text-sub-header {
+  font-size: 0.5em;
+  line-height: 0.5px;
+}
+
 .leading-3 {
   line-height: .75rem;
 }
@@ -18143,41 +18153,41 @@ video {
   }
 }
 
-.content-wrapper layout-background {
+.content-wrapper {
   width: 100%;
 }
 
 @media (min-width: 640px) {
-  .content-wrapper layout-background {
+  .content-wrapper {
     max-width: 640px;
   }
 }
 
 @media (min-width: 768px) {
-  .content-wrapper layout-background {
+  .content-wrapper {
     max-width: 768px;
   }
 }
 
 @media (min-width: 1024px) {
-  .content-wrapper layout-background {
+  .content-wrapper {
     max-width: 1024px;
   }
 }
 
 @media (min-width: 1280px) {
-  .content-wrapper layout-background {
+  .content-wrapper {
     max-width: 1280px;
   }
 }
 
 @media (min-width: 1536px) {
-  .content-wrapper layout-background {
+  .content-wrapper {
     max-width: 1536px;
   }
 }
 
-.content-wrapper layout-background {
+.content-wrapper {
   margin-left: auto;
   margin-right: auto;
   padding-top: 0px;
@@ -18187,7 +18197,7 @@ video {
 }
 
 @media (min-width: 640px) {
-  .content-wrapper layout-background {
+  .content-wrapper {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     padding-left: 2rem;
@@ -22302,6 +22312,16 @@ video {
   .sm\:text-1em {
     font-size: 1em;
     line-height: 2em;
+  }
+
+  .sm\:text-header {
+    font-size: 0.7em;
+    line-height: 0.5px;
+  }
+
+  .sm\:text-sub-header {
+    font-size: 0.5em;
+    line-height: 0.5px;
   }
 
   .sm\:leading-3 {
@@ -39833,6 +39853,16 @@ video {
     line-height: 2em;
   }
 
+  .md\:text-header {
+    font-size: 0.7em;
+    line-height: 0.5px;
+  }
+
+  .md\:text-sub-header {
+    font-size: 0.5em;
+    line-height: 0.5px;
+  }
+
   .md\:leading-3 {
     line-height: .75rem;
   }
@@ -57360,6 +57390,16 @@ video {
   .lg\:text-1em {
     font-size: 1em;
     line-height: 2em;
+  }
+
+  .lg\:text-header {
+    font-size: 0.7em;
+    line-height: 0.5px;
+  }
+
+  .lg\:text-sub-header {
+    font-size: 0.5em;
+    line-height: 0.5px;
   }
 
   .lg\:leading-3 {
@@ -74891,6 +74931,16 @@ video {
     line-height: 2em;
   }
 
+  .xl\:text-header {
+    font-size: 0.7em;
+    line-height: 0.5px;
+  }
+
+  .xl\:text-sub-header {
+    font-size: 0.5em;
+    line-height: 0.5px;
+  }
+
   .xl\:leading-3 {
     line-height: .75rem;
   }
@@ -92418,6 +92468,16 @@ video {
   .\32xl\:text-1em {
     font-size: 1em;
     line-height: 2em;
+  }
+
+  .\32xl\:text-header {
+    font-size: 0.7em;
+    line-height: 0.5px;
+  }
+
+  .\32xl\:text-sub-header {
+    font-size: 0.5em;
+    line-height: 0.5px;
   }
 
   .\32xl\:leading-3 {
