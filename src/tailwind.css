@@ -1,3 +1,5 @@
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,3 +19,13 @@
     background-size: cover;
 
 }
+
+
+
+    @media (max-width: 768px) {
+        .fc-toolbar.fc-header-toolbar {
+            display: flex;
+            flex-direction: column-reverse;
+    }
+
+    }
