@@ -31,7 +31,7 @@ const Header = (props: any) => {
 				</div>
 
 				<div className={`w-full  lg:flex lg:items-center lg:w-auto ${open ? 'block sm:none' : 'hidden sm:block '} transition duration-500 ease-in-out transform`}>
-					<div className='text-sm sm:flex sm:w-full justify-end'>
+					<div className='text-header sm:flex sm:w-full justify-end'>
 						{menuData.map((list: any, id: number) => (
 							<NavLink
 								to={list.children.length > 0 ? '#' : list.route}
@@ -47,7 +47,7 @@ const Header = (props: any) => {
 												<Link
 													to={child.route}
 													key={id}
-													className='text-gray-700 pt-1 group-hover:block hover:bg-blue-300 bg-blue-100 text-white text-right p-4 text-lg transition duration-500 ease-in-out  hover:text-red-600 transform'
+													className='text-xs text-gray-700 pt-1 group-hover:block hover:bg-blue-300 bg-blue-100 text-white text-right p-4  transition duration-500 ease-in-out  hover:text-red-600 transform'
 												>
 													{child.title}
 												</Link>

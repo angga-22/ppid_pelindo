@@ -1,5 +1,6 @@
 import { InformasiApi } from 'api';
 import CardInformasi from 'components/Card/CardInformasi';
+import Loading from 'components/LoadingBar';
 import { useEffect, useState } from 'react';
 
 const InformasiPublikPage = () => {
@@ -88,21 +89,17 @@ const InformasiPublikPage = () => {
 		});
 	}, []);
 
-	const Loading = () => {
-		return <div className=' container text-center my-10'>...loading</div>;
-	};
-
 	return (
 		<>
 			{loading ? (
 				<Loading />
 			) : (
 				<div>
-					<div className='flex items-center justify-between bg-blue-100 text-white p-6 lg:p-20'>
+					<div className='bg-banner flex items-center justify-between bg-blue-100 text-white p-6 lg:p-20 h-full sm:h-64'>
 						<h3 className='text-lg lg:text-3xl w-1/ lg:w-1/3'>Informasi Yang Wajib Disediakan dan Diumumkan Secara</h3>
 						<h1 className='text-xl lg:text-6xl'>Berkala</h1>
 					</div>
-					<div className='container my-8 mx-auto p-2 lg:p-0'>
+					<div className='content-wrapper layout-background layout-background'>
 						<h1 className='text-xl lg:text-2xl uppercase font-bold my-8'>Informasi Tentang Profil PT. Pelabuhan Indonesia III (Persero)</h1>
 
 						{informasi.map((data: any, index: any) => {

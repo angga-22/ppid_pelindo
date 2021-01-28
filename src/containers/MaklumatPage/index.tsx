@@ -1,20 +1,15 @@
-import React from "react";
+import React from 'react';
+import Banner from 'components/Banner';
 
 const InformasiPublikPage = () => {
-  return (
-    <>
-      <div className="flex items-center justify-between bg-blue-100 text-white p-6 lg:p-20">
-        <h1 className="text-xl lg:text-6xl">Maklumat</h1>
-      </div>
-      <div className="container my-8 mx-auto">
-        <img
-          src="https://e-ppid.pelindo.co.id/upload/maklumat.png"
-          alt="maklumat"
-          className="w-full "
-        />
-      </div>
-    </>
-  );
+	return (
+		<>
+			<Banner title='Maklumat' />
+			<div className='container my-8 mx-auto'>
+				<img src='https://e-ppid.pelindo.co.id/upload/maklumat.png' alt='maklumat' className='w-60 mx-auto' />
+			</div>
+		</>
+	);
 };
 
 export default InformasiPublikPage;

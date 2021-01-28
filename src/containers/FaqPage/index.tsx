@@ -1,5 +1,6 @@
 import { FaqApi } from 'api';
 import LoadingBar from 'components/LoadingBar';
+import Banner from 'components/Banner';
 import { useState, useEffect } from 'react';
 
 const Index = () => {
@@ -8,19 +9,22 @@ const Index = () => {
 
 	useEffect(() => {
 		FaqApi(($: any) => {
-			let qa: any = [];
+			let answer: any = [];
+			let question: any = [];
 
-			//question......
-
-			$('tbody > tr:nth-child(1), tr:nth-child(2), tr:nth-child(3), tr:nth-child(4), tr:nth-child(5), tr:nth-child(6) > td:nth-child(2)').each(function (i: any, element: any) {
-				const datas = $(element).prepend().text().trim();
-
-				const obj = { title: '' };
-				obj['title'] = datas;
-				qa.push(obj);
+			$('tbody > tr:nth-child(even) > td:nth-child(even)').each(function (i: any, element: any) {
+				let answers = $(element).prepend().text().trim();
+				answer.push({ answer: answers });
+			});
+			$('tbody > tr:nth-child(odd) > td:nth-child(even)').each(function (i: any, element: any) {
+				let questions = $(element).prepend().text().trim();
+				question.push({ question: questions });
 			});
 
-			setQa(qa);
+			let data = answer.map((item: any, i: number) => ({ ...item, ...question[i] }));
+			// let data = answer.map((item: any, i: number) => Object.assign({}, item, question[i]));
+
+			setQa(data);
 			setLoading(false);
 		});
 	}, []);
@@ -28,22 +32,21 @@ const Index = () => {
 	//
 
 	if (loading) {
-		return <LoadingBar />
-	} 
+		return <LoadingBar />;
+	}
 
 	return (
 		<>
-			<div className='flex items-center justify-between bg-blue-100 text-white p-6 lg:p-20'>
-				<h3 className='text-lg lg:text-3xl w-1/ lg:w-1/3'>FAQ</h3>
-			</div>
+			<Banner title='FAQ' />
 
-			<div className='container my-8 mx-auto'>
+			<div className='content-wrapper layout-background '>
 				<div className='px-2 sm:px-0'>
-					<div className='border rounded-lg p-4 flex flex-col justify-between  my-4 border-gray-200 px-2 '>
-						{qa.map((list: any) => (
-							<div className='text-lg my-2 sm:my-0 p-4'>{list.title} </div>
-						))}
-					</div>
+					{qa.map((list: any, i: number) => (
+						<div key={i} className='border rounded-lg p-4 flex flex-col justify-between  my-4 border-gray-200 px-2 '>
+							<div className='text-lg my-2 sm:my-0 p-4'>{list.question} </div>
+							<div className='text-lg my-2 sm:my-0 p-4'>{list.answer} </div>
+						</div>
+					))}
 				</div>
 			</div>
 		</>

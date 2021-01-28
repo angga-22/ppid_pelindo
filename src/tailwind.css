@@ -1,31 +1,34 @@
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 .divide-footer {
-    border-top-color: white;
-    background: white;
-    border-style: solid;
-    height: 3px;
-    width: 15px;
+	border-top-color: white;
+	background: white;
+	border-style: solid;
+	height: 3px;
+	width: 15px;
 }
 
 .profile-banner {
-    background-image: url('/src/assets/img/profile.png');
-    background-position: center;
-    background-size: cover;
-
+	background-image: url('/src/assets/img/profile.png');
+	background-position: center;
+	background-size: cover;
 }
 
+.layout-background {
+	background-image: url('/src/assets/img/bgLayout.png');
+	background-position: center;
+	background-size: cover;
+}
 
+@media (max-width: 768px) {
+	.fc-toolbar.fc-header-toolbar {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+}
 
-    @media (max-width: 768px) {
-        .fc-toolbar.fc-header-toolbar {
-            display: flex;
-            flex-direction: column-reverse;
-    }
-
-    }
+.content-wrapper {
+	@apply container mx-auto px-4 sm:px-8 py-0 sm:py-2;
+}

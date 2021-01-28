@@ -4652,6 +4652,21 @@ video {
   line-height: 1;
 }
 
+.text-1em {
+  font-size: 1em;
+  line-height: 2em;
+}
+
+.text-header {
+  font-size: 0.7em;
+  line-height: 0.5px;
+}
+
+.text-sub-header {
+  font-size: 0.5em;
+  line-height: 0.5px;
+}
+
 .leading-3 {
   line-height: .75rem;
 }
@@ -13880,6 +13895,14 @@ video {
   --tw-numeric-fraction: stacked-fractions;
 }
 
+.tracking-2 {
+  letter-spacing: 0.2px;
+}
+
+.tracking-5 {
+  letter-spacing: 0.5px;
+}
+
 .tracking-tighter {
   letter-spacing: -0.05em;
 }
@@ -14094,7 +14117,7 @@ video {
 }
 
 .w-60 {
-  width: 15rem;
+  width: 60%;
 }
 
 .w-64 {
@@ -18329,10 +18352,68 @@ video {
   background-size: cover;
 }
 
+.layout-background {
+  background-image: url('/src/assets/img/bgLayout.png');
+  background-position: center;
+  background-size: cover;
+}
+
 @media (max-width: 768px) {
   .fc-toolbar.fc-header-toolbar {
     display: flex;
     flex-direction: column-reverse;
+  }
+}
+
+.content-wrapper {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .content-wrapper {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .content-wrapper {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content-wrapper {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .content-wrapper {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .content-wrapper {
+    max-width: 1536px;
+  }
+}
+
+.content-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .content-wrapper {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
@@ -22438,6 +22519,21 @@ video {
   .sm\:text-9xl {
     font-size: 8rem;
     line-height: 1;
+  }
+
+  .sm\:text-1em {
+    font-size: 1em;
+    line-height: 2em;
+  }
+
+  .sm\:text-header {
+    font-size: 0.7em;
+    line-height: 0.5px;
+  }
+
+  .sm\:text-sub-header {
+    font-size: 0.5em;
+    line-height: 0.5px;
   }
 
   .sm\:leading-3 {
@@ -31655,6 +31751,14 @@ video {
     --tw-numeric-fraction: stacked-fractions;
   }
 
+  .sm\:tracking-2 {
+    letter-spacing: 0.2px;
+  }
+
+  .sm\:tracking-5 {
+    letter-spacing: 0.5px;
+  }
+
   .sm\:tracking-tighter {
     letter-spacing: -0.05em;
   }
@@ -31869,7 +31973,7 @@ video {
   }
 
   .sm\:w-60 {
-    width: 15rem;
+    width: 60%;
   }
 
   .sm\:w-64 {
@@ -40162,6 +40266,21 @@ video {
   .md\:text-9xl {
     font-size: 8rem;
     line-height: 1;
+  }
+
+  .md\:text-1em {
+    font-size: 1em;
+    line-height: 2em;
+  }
+
+  .md\:text-header {
+    font-size: 0.7em;
+    line-height: 0.5px;
+  }
+
+  .md\:text-sub-header {
+    font-size: 0.5em;
+    line-height: 0.5px;
   }
 
   .md\:leading-3 {
@@ -49379,6 +49498,14 @@ video {
     --tw-numeric-fraction: stacked-fractions;
   }
 
+  .md\:tracking-2 {
+    letter-spacing: 0.2px;
+  }
+
+  .md\:tracking-5 {
+    letter-spacing: 0.5px;
+  }
+
   .md\:tracking-tighter {
     letter-spacing: -0.05em;
   }
@@ -49593,7 +49720,7 @@ video {
   }
 
   .md\:w-60 {
-    width: 15rem;
+    width: 60%;
   }
 
   .md\:w-64 {
@@ -57886,6 +58013,21 @@ video {
   .lg\:text-9xl {
     font-size: 8rem;
     line-height: 1;
+  }
+
+  .lg\:text-1em {
+    font-size: 1em;
+    line-height: 2em;
+  }
+
+  .lg\:text-header {
+    font-size: 0.7em;
+    line-height: 0.5px;
+  }
+
+  .lg\:text-sub-header {
+    font-size: 0.5em;
+    line-height: 0.5px;
   }
 
   .lg\:leading-3 {
@@ -67103,6 +67245,14 @@ video {
     --tw-numeric-fraction: stacked-fractions;
   }
 
+  .lg\:tracking-2 {
+    letter-spacing: 0.2px;
+  }
+
+  .lg\:tracking-5 {
+    letter-spacing: 0.5px;
+  }
+
   .lg\:tracking-tighter {
     letter-spacing: -0.05em;
   }
@@ -67317,7 +67467,7 @@ video {
   }
 
   .lg\:w-60 {
-    width: 15rem;
+    width: 60%;
   }
 
   .lg\:w-64 {
@@ -75610,6 +75760,21 @@ video {
   .xl\:text-9xl {
     font-size: 8rem;
     line-height: 1;
+  }
+
+  .xl\:text-1em {
+    font-size: 1em;
+    line-height: 2em;
+  }
+
+  .xl\:text-header {
+    font-size: 0.7em;
+    line-height: 0.5px;
+  }
+
+  .xl\:text-sub-header {
+    font-size: 0.5em;
+    line-height: 0.5px;
   }
 
   .xl\:leading-3 {
@@ -84827,6 +84992,14 @@ video {
     --tw-numeric-fraction: stacked-fractions;
   }
 
+  .xl\:tracking-2 {
+    letter-spacing: 0.2px;
+  }
+
+  .xl\:tracking-5 {
+    letter-spacing: 0.5px;
+  }
+
   .xl\:tracking-tighter {
     letter-spacing: -0.05em;
   }
@@ -85041,7 +85214,7 @@ video {
   }
 
   .xl\:w-60 {
-    width: 15rem;
+    width: 60%;
   }
 
   .xl\:w-64 {
@@ -93334,6 +93507,21 @@ video {
   .\32xl\:text-9xl {
     font-size: 8rem;
     line-height: 1;
+  }
+
+  .\32xl\:text-1em {
+    font-size: 1em;
+    line-height: 2em;
+  }
+
+  .\32xl\:text-header {
+    font-size: 0.7em;
+    line-height: 0.5px;
+  }
+
+  .\32xl\:text-sub-header {
+    font-size: 0.5em;
+    line-height: 0.5px;
   }
 
   .\32xl\:leading-3 {
@@ -102551,6 +102739,14 @@ video {
     --tw-numeric-fraction: stacked-fractions;
   }
 
+  .\32xl\:tracking-2 {
+    letter-spacing: 0.2px;
+  }
+
+  .\32xl\:tracking-5 {
+    letter-spacing: 0.5px;
+  }
+
   .\32xl\:tracking-tighter {
     letter-spacing: -0.05em;
   }
@@ -102765,7 +102961,7 @@ video {
   }
 
   .\32xl\:w-60 {
-    width: 15rem;
+    width: 60%;
   }
 
   .\32xl\:w-64 {
